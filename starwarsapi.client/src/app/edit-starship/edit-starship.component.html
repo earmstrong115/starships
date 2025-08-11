@@ -57,12 +57,11 @@
   </form>
 </mat-dialog-content>
 
-<br/>
-
 <mat-dialog-actions align="end">
-  
   <button mat-button *ngIf="data.id" (click)="onDelete()">Delete</button><span style="width: 230px">&nbsp;</span>
+
   <mat-spinner diameter="25" *ngIf="isSaving"></mat-spinner>
+
   <button mat-button (click)="onCancel()">Cancel</button>
   <button mat-flat-button color="primary" (click)="onSave()" [disabled]="isSaving">Save</button>
 </mat-dialog-actions>

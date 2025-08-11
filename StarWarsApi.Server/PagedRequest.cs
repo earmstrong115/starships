@@ -1,9 +1,7 @@
 ﻿namespace StarWarsApi.Server
 {
-    public class PagedRequest<T>
+    public class PagedRequest
     {
-        public T[] Data { get; set; }
-
         public int Page { get; set; } = 1;
         public int PageSize { get; set; } = 10;
         public FilterItem[] Filters { get; set; }
@@ -14,9 +12,8 @@
         {
         }
 
-        public PagedRequest(T[] data, int page, int pageSize, FilterItem[] filters = null, string sortBy = null, bool sortDescending = false)
+        public PagedRequest(int page, int pageSize, FilterItem[] filters = null, string sortBy = null, bool sortDescending = false)
         {
-            Data = data;
             Page = page;
             PageSize = pageSize;
             Filters = filters;
