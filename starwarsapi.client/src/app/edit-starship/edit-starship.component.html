@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>Edit Starship</h2>
+<mat-dialog-content>
+
+  <form>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="data.name" name="name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Model</mat-label>
+      <input matInput [(ngModel)]="data.model" name="model" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Manufacturer</mat-label>
+      <input matInput [(ngModel)]="data.manufacturer" name="manufacturer" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Cost in Credits</mat-label>
+      <input matInput [(ngModel)]="data.cost_in_credits" name="cost_in_credits" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Length</mat-label>
+      <input matInput [(ngModel)]="data.length" name="length" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Max Atmosphering Speed</mat-label>
+      <input matInput [(ngModel)]="data.max_atmosphering_speed" name="max_atmosphering_speed" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Crew</mat-label>
+      <input matInput [(ngModel)]="data.crew" name="crew" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Passengers</mat-label>
+      <input matInput [(ngModel)]="data.passengers" name="passengers" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Cargo Capacity</mat-label>
+      <input matInput [(ngModel)]="data.cargo_capacity" name="cargo_capacity" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Consumables</mat-label>
+      <input matInput [(ngModel)]="data.consumables" name="consumables" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Hyperdrive Rating</mat-label>
+      <input matInput [(ngModel)]="data.hyperdrive_rating" name="hyperdrive_rating" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>MGLT</mat-label>
+      <input matInput [(ngModel)]="data.mglt" name="mglt" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Starship Class</mat-label>
+      <input matInput [(ngModel)]="data.starship_class" name="starship_class" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<br/>
+
+<mat-dialog-actions align="end">
+  
+  <button mat-button *ngIf="data.id" (click)="onDelete()">Delete</button><span style="width: 230px">&nbsp;</span>
+  <mat-spinner diameter="25" *ngIf="isSaving"></mat-spinner>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="onSave()" [disabled]="isSaving">Save</button>
+</mat-dialog-actions>
