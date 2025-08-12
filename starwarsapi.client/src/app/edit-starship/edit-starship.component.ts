@@ -45,6 +45,7 @@ export class EditStarshipComponent {
     if (!confirm("Are you sure you want to delete this starship?"))
       return;
 
+    this.isSaving = true;
     this.starshipService.deleteStarship(this.data.id).subscribe({
       next: () => this.dialogRef.close(true),
       error: () => this.isSaving = false
